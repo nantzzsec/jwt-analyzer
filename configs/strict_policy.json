@@ -1,0 +1,27 @@
+{
+  "_comment": "JWT Security Analyzer — Strict Policy Configuration",
+  "_description": "Customize this file to match your application's security requirements.",
+
+  "expected_issuer": "https://auth.example.com",
+  "expected_audience": "https://api.example.com",
+
+  "required_claims": ["sub", "iat", "exp", "jti"],
+
+  "allowed_algorithms": [
+    "RS256", "RS384", "RS512",
+    "ES256", "ES384", "ES512",
+    "PS256", "PS384", "PS512"
+  ],
+
+  "max_lifetime_minutes": 60,
+
+  "sensitive_keywords": [
+    "password", "passwd", "pwd",
+    "secret", "client_secret",
+    "api_key", "apikey",
+    "private_key", "privatekey",
+    "refresh_token", "access_token",
+    "credit_card", "ssn",
+    "internal_id", "employee_id"
+  ]
+}
