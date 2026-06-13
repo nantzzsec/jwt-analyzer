@@ -1,0 +1,19 @@
+# JWT Security Analyzer CLI — Python Dependencies
+#
+# Core tool runs with Python 3 standard library only.
+# Optional dependencies below enhance functionality.
+#
+# Install all: pip install -r requirements.txt
+# Install minimal: (no extra packages needed)
+
+# ── Optional: Enhanced terminal output ───────────────────────────────────────
+rich>=13.0.0
+
+# ── Optional: RSA/EC signature verification ──────────────────────────────────
+cryptography>=41.0.0
+
+# ── Optional: PyJWT for additional compatibility ─────────────────────────────
+PyJWT>=2.8.0
+
+# ── Development / Testing ────────────────────────────────────────────────────
+# No external test dependencies required (uses stdlib unittest)
