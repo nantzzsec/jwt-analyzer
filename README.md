@@ -32,8 +32,8 @@ Safe for public GitHub repositories. No brute force. No cracking. No unauthorize
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/nantzzsec/jwt-security-analyzer-cli.git
-cd jwt-security-analyzer-cli
+git clone https://github.com/nantzzsec/jwt-analyzer.git
+cd jwt-analyzer
 ```
 
 ### 2. Create virtual environment (recommended)
@@ -356,7 +356,7 @@ Contributions are welcome! Please:
 3. Follow existing code style (docstrings, type hints, modular design)
 4. Add unit tests for new functionality
 5. Ensure all existing tests pass: `python -m unittest discover tests/ -v`
-6. Submit a pull request to `nantzzsec/jwt-security-analyzer-cli`
+6. Submit a pull request to `nantzzsec/jwt-analyzer`
 
 **Important**: Do not submit contributions that add brute force, cracking, exploit generation, or any offensive capability.
 
