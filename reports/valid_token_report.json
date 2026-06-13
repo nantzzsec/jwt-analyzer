@@ -1,0 +1,66 @@
+{
+  "tool": "jwt-security-analyzer-cli",
+  "version": "1.0.0",
+  "generated_at": "2026-06-13T02:49:39.437819Z",
+  "token_overview": {
+    "token_truncated": "samples/valid_token.txt",
+    "algorithm": "HS256",
+    "type": "JWT",
+    "issuer": "https://auth.example.com",
+    "subject": "1234567890",
+    "audience": "https://api.example.com",
+    "expires_at": 1781319622,
+    "issued_at": 1781318722,
+    "signature_status": "Valid"
+  },
+  "risk_assessment": {
+    "level": "Low",
+    "summary": "Low severity issues detected. Review recommendations for security improvements.",
+    "counts": {
+      "Critical": 0,
+      "High": 0,
+      "Medium": 1,
+      "Low": 0,
+      "Info": 3
+    },
+    "total_findings": 4
+  },
+  "findings": [
+    {
+      "title": "Algorithm 'HS256' Not in Allowed Algorithm List",
+      "severity": "Medium",
+      "confidence": "Potential",
+      "category": "Header",
+      "evidence": "Token uses alg='HS256'. Policy allowed_algorithms: ['RS256', 'RS384', 'RS512', 'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512']",
+      "impact": "Using non-whitelisted algorithms may indicate misconfiguration or an attempt to exploit algorithm confusion vulnerabilities.",
+      "recommendation": "Configure your JWT library to explicitly whitelist allowed algorithms. Never derive the algorithm from the token header."
+    },
+    {
+      "title": "Token Expiration: Valid",
+      "severity": "Info",
+      "confidence": "Confirmed",
+      "category": "Claims",
+      "evidence": "'exp' = 1781319622 | Expires in 10m 42s",
+      "impact": "Token has not yet expired.",
+      "recommendation": "Monitor token lifetime to ensure it aligns with policy."
+    },
+    {
+      "title": "Issuer Identified: 'https://auth.example.com'",
+      "severity": "Info",
+      "confidence": "Informational",
+      "category": "Claims",
+      "evidence": "'iss' = 'https://auth.example.com'",
+      "impact": "Issuer claim is present.",
+      "recommendation": "Issuer matches expected value."
+    },
+    {
+      "title": "Signature Verification: VALID (HS256)",
+      "severity": "Info",
+      "confidence": "Confirmed",
+      "category": "Signature",
+      "evidence": "Algorithm: HS256 | HMAC signature verified successfully using the provided secret.",
+      "impact": "Token signature is cryptographically valid with the provided key.",
+      "recommendation": "Ensure the signing secret is rotated regularly and stored securely."
+    }
+  ]
+}
