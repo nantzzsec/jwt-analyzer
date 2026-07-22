@@ -1,7 +1,7 @@
 # 🔐 JWT Security Analyzer CLI
 
 > **Author**: [nantzzsec](https://github.com/nantzzsec)  
-> **GitHub**: https://github.com/nantzzsec/jwt-security-analyzer-cli  
+> **GitHub**: https://github.com/nantzzsec/jwt-analyzer 
 > **License**: MIT
 
 A terminal-only, defensive JWT security analysis tool built in Python.
